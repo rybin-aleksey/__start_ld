@@ -1,0 +1,76 @@
+// USER VARIABLES SECTION
+
+$accent: orange // Accent Color
+$fontsize: 1vw // Body Font Size
+$textcolor: #000 // Text Color
+$lineheight: 1.65 // Document Line Height
+$userfont: sf-pro-display, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+@mixin mainFont ()
+	font-size: 4.51em
+	line-height: 1.5em
+	font-weight: 400
+	color: #272727
+
+@mixin secondFont ()
+	font-size: 2.92em
+	line-height: 1.5em
+	font-weight: 400
+	color: #272727
+
+@mixin mainText ()
+	font-size: 1.39em
+	line-height: 1.44em
+	font-weight: 400
+
+@mixin linkText ()
+	font-size: 1.39em
+	line-height: 1.44em
+	font-weight: 400
+	color: #272727
+
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot
+
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('sf-pro-display', normal, 400, '../fonts/sf-pro-display-regular.woff2')
+@include font('sf-pro-display', semibold, 600, '../fonts/sf-pro-display-semibold.woff2')
+
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+
