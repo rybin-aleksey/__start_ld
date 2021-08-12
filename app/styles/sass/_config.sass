@@ -8,27 +8,19 @@ $userfont: sf-pro-display, sans-serif // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 
 @mixin mainFont ()
-	font-size: 4.51em
-	line-height: 1.5em
+	font-size: 5.83em
+	line-height: .85em
 	font-weight: 400
-	color: #272727
+	color: #F9F9F9
 
 @mixin secondFont ()
-	font-size: 2.92em
+	font-size: 1.53em
 	line-height: 1.5em
 	font-weight: 400
 	color: #272727
+	font-family: sf-pro-text
+	letter-spacing: -.3px
 
-@mixin mainText ()
-	font-size: 1.39em
-	line-height: 1.44em
-	font-weight: 400
-
-@mixin linkText ()
-	font-size: 1.39em
-	line-height: 1.44em
-	font-weight: 400
-	color: #272727
 
 
 // IMPORT SECTION
@@ -46,7 +38,7 @@ $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font
 		src: url($furl) format('woff2')
 
 @include font('sf-pro-display', normal, 400, '../fonts/sf-pro-display-regular.woff2')
-@include font('sf-pro-display', semibold, 600, '../fonts/sf-pro-display-semibold.woff2')
+@include font('sf-pro-text', normal, 400, '../fonts/sf-pro-text-regular.woff2')
 
 
 // GENERAL DOCUMENT STYLES
@@ -73,4 +65,3 @@ body
 	min-width: 320px
 	position: relative
 	overflow-x: hidden
-
